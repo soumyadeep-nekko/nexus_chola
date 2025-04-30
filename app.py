@@ -99,402 +99,402 @@ prompt_library = {
     Maintain objectivity and professionalism in the tone of the summary.
 
     Flag any missing evidence or finance references if they are not provided in the document.
-    """,
-
-    "Chronological Event Extraction": """
-    You are a specialized finance AI designed to analyze and extract key events from tax-related documents. Your task is to identify and extract all events mentioned in the document in chronological order, along with their respective dates, detailed descriptions, and associated actions by either the tax department or the taxpayer. Follow the instructions and format below for consistent and accurate results.
-
-
-    ---
-
-    Instructions:
-
-    1. Document Identification:
-
-    Identify the type of document (e.g., Show Cause Notice, Order, Audit Report, Reply, Summon).
-
-    Mention the issuing authority and the document's purpose if identifiable.
-
-
-
-    2. Event Extraction:
-
-    Review the document thoroughly to extract all events.
-
-    Ensure each event is listed in chronological order by date.
-
-    Include specific details for each event, such as:
-
-    Date: The exact date of the event.
-
-    Description: A clear and concise explanation of what occurred.
-
-    Action Taken: Specify the actions performed by the tax department or the taxpayer.
-
-
-
-
-    3. Event Categorization:
-
-    Identify which party initiated the action (e.g., Taxpayer, Tax Department, Adjudicating Authority).
-
-    Clearly separate events based on whether they pertain to notices, replies, hearings, submissions, or decisions.
-
-
-
-    4. Handling Missing Dates:
-
-    If an event does not have a specific date mentioned, include it as "Undated Event" and describe it.
-
-
-
-    5. Format the Output as Follows:
-
-
-
-
-    ---
-
-    Output Format:
-
-    1. Document Details:
-
-    Document Type: [e.g., Show Cause Notice, Order, Reply]
-
-    Issuing Authority: [e.g., GST Department, Adjudicating Officer]
-
-    Taxpayer Name & GSTIN (if applicable):
-
-    Purpose of the Document:
-
-
-    2. Chronological Events:
-
-    3. Summary of Key Actions:
-
-    Provide a brief summary of the overall sequence of events and highlight any critical actions or delays by either party.
-
-
-
-    ---
-
-    Additional Notes:
-
-    Ensure all dates are formatted as [YYYY-MM-DD] for consistency.
-
-    Use concise and professional language for event descriptions.
-
-    Flag any missing or ambiguous information for review.
-
-    Maintain objectivity while presenting actions by either party.
-    """,
-
-    "Disputed Amount Details": """
-    You are a finance AI tasked with analyzing and extracting disputed amounts from tax-related documents. Your goal is to present the total amount under dispute in a tabular format, segregated by financial year (FY) and broken down into IGST, CGST, SGST/UTGST, CESS, Interest, Penalty, Fees, and Other Components. Additionally, provide details about the reason for demand, reference financial framework, and the party involved. Ensure the output is structured into two separate tables as specified below."
-
-
-    ---
-
-    Instructions:
-
-    1. Document Identification:
-
-    Identify the type of document (e.g., Show Cause Notice, Order, etc.).
-
-    Extract basic details such as taxpayer name, GSTIN, issuing authority, and document issuance date.
-
-
-
-    2. Disputed Amount Extraction by Financial Year:
-
-    For each financial year, extract the disputed amounts and segregate them into the following components:
-
-    Tax: IGST, CGST, SGST/UTGST, CESS.
-
-    Non-Tax: Interest, Penalty, Fees, Others.
-
-
-    Provide specific references for the financial framework, reasons for the demand, and the party involved.
-
-
-
-    3. Reason for Demand and Financial Year Segregation (Table A):
-
-    Create a table summarizing the reason for demand along with FY-wise segregation of amounts under each component.
-
-
-
-    4. Financial Year Summary Segregation (Table B):
-
-    Create a second table summarizing the amounts for each financial year, linking the reference financial framework and the reason for demand.
-
-
-
-    5. Handling Missing Data:
-
-    If any category is not mentioned, mark it as "N/A."
-
-    If financial year details are missing, list the data as "Unspecified FY."
-
-
-
-    6. Format the Output as Follows:
-
-
-
-
-    ---
-
-    Output Format:
-
-    1. Document Details:
-
-    Document Type: [e.g., Show Cause Notice, Order, Audit Report]
-
-    Issuing Authority: [Authority Name]
-
-    Taxpayer Name & GSTIN:
-
-    Date of Issuance: [YYYY-MM-DD]
-
-
-
-    ---
-
-    Table A: Reason for Demand by Financial Year
-
-
-    ---
-
-    Table B: Financial Year-Wise Summary
-
-
-    ---
-
-    3. Total Disputed Amount:
-
-    Grand Total Amount Under Dispute: [Sum of all components across all FYs]
-
-
-
-    ---
-
-    Additional Notes:
-
-    Ensure accuracy in amounts and references, including cross-verification within the document.
-
-    Use consistent formatting for financial references (e.g., Section 73 of CGST Act, Notification No. XX/XX).
-
-    Highlight any discrepancies or missing data for review.
-
-
-
-    ---
-
-    Output Example (Use bullets for clarity):
-
-    Table 1
-
-    Reason for Demand: [Brief description]
-
-    FY: [Year]
-
-    IGST: [Amount], CGST: [Amount], SGST/UTGST: [Amount], CESS: [Amount]
-
-    Interest: [Amount], Penalty: [Amount], Fees: [Amount]
-
-    Finance Framework: [Section/Notification]
-
-    Party: [Taxpayer/Department]
-
-
-    Table 2 : FY Summary:
-
-    FY: [Year]
-
-    IGST: [Amount], CGST: [Amount], SGST/UTGST: [Amount], CESS: [Amount]
-
-    Interest: [Amount], Penalty: [Amount], Fees: [Amount]
-
-    Finance Framework: [Section/Notification]
-
-    Reason for Demand: [Brief description]
-    """,
-
-    "Relevant finance Framework Identification": """
-    You are a finance AI tasked with analyzing tax-related documents to extract all finance provisions, including sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document. Your goal is to identify each provision and list them with their context (i.e., how they are used or referenced in the document). Ensure the output is clear, detailed, and structured as specified below."
-
-
-    ---
-
-    Instructions:
-
-    1. Document Identification:
-
-    Identify the type of document (e.g., Show Cause Notice, Order, Reply, Judgment).
-
-    Provide key details, such as taxpayer name, GSTIN (if applicable), and issuing authority.
-
-
-
-    2. Finance Provisions Extraction:
-
-    Extract and list all sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document.
-
-    Include specific details such as section numbers, notification numbers, circular dates, and order references.
-
-
-
-    3. Contextual Information:
-
-    For each provision, describe the context in which it is cited. For example:
-
-    Whether it forms the basis of an allegation.
-
-    Whether it supports a taxpayer's defense.
-
-    Whether it provides procedural guidelines or calculations.
-
-
-
-
-    4. Categorization:
-
-    Organize the provisions into categories (e.g., Act Sections, Rules, Notifications, etc.).
-
-    Ensure each category is distinct and non-overlapping.
-
-
-
-    5. Handling Ambiguities:
-
-    Flag any unclear or ambiguous references for further review.
-
-
-
-    6. Format the Output as Follows:
-
-
-
-
-    ---
-
-    Output Format:
-
-    1. Document Details:
-
-    Document Type: [e.g., Show Cause Notice, Order, Reply]
-
-    Issuing Authority: [Authority Name]
-
-    Taxpayer Name & GSTIN:
-
-    Date of Issuance: [YYYY-MM-DD]
-
-
-    2. Finance Provisions and Context:
-
-    3. Summary of Key Provisions:
-
-    Provide a brief summary of the most critical provisions and how they influence the document's content.
-
-
-
-    ---
-
-    Additional Notes:
-
-    Ensure that all finance provisions are accurately cited, including their numbers, dates, and issuing authorities.
-
-    Use concise and professional language to describe the context.
-
-    Flag any missing or ambiguous references for clarification.
-
-
-
-    ---
-    """,
-    "Taxpayer Argument": """
-    You are a finance AI tasked with analyzing the taxpayer's reply to a tax-related notice or order. Extract and present the taxpayer’s defense in a structured manner, including arguments against each allegation, the amount involved, finance references cited, and any case laws or judgments provided. Ensure the output is organized into the table format specified below."
-
-
-    ---
-
-    Instructions:
-
-    1. Document Identification:
-
-    Identify the type of document (e.g., Reply to Show Cause Notice, Hearing Reply, etc.).
-
-    Extract key details such as taxpayer name, GSTIN, and date of submission.
-
-
-
-    2. Against Allegation:
-
-    Extract all allegations mentioned in the document and summarize the specific response provided by the taxpayer for each allegation.
-
-
-
-    3. Summarize Arguments:
-
-    Provide a concise summary of the taxpayer's defense or arguments against each allegation, including procedural or substantive claims.
-
-
-
-    4. Amount Involved:
-
-    Specify the disputed amount linked to each allegation, broken down if applicable (e.g., IGST, CGST, SGST, CESS, interest, penalty, etc.).
-
-
-
-    5. Finance References Given:
-
-    Extract all finance provisions (e.g., sections, rules, notifications) cited by the taxpayer in support of their defense.
-
-
-
-    6. Case Law/Judgment Given:
-
-    Identify any case laws, rulings, or judgments mentioned in the taxpayer’s reply, along with their relevance.
-
-
-
-    7. Format the Output as Follows:
-
-
-
-
-    ---
-
-    Output Format:
-
-    1. Document Details:
-
-    Document Type: [e.g., Reply to Show Cause Notice]
-
-    Taxpayer Name & GSTIN:
-
-    Date of Submission: [YYYY-MM-DD]
-
-
-    2. Taxpayer Defense Table:
-
-
-    ---
-
-    Additional Notes:
-
-    Ensure the table is comprehensive and accurately reflects the taxpayer's defense.
-
-    For any missing data (e.g., finance references or judgments), flag as "Not Provided."
-
-    Use concise and professional language for clarity and precision.
-
-
-
-    ---
     """
+
+    # "Chronological Event Extraction": """
+    # You are a specialized finance AI designed to analyze and extract key events from tax-related documents. Your task is to identify and extract all events mentioned in the document in chronological order, along with their respective dates, detailed descriptions, and associated actions by either the tax department or the taxpayer. Follow the instructions and format below for consistent and accurate results.
+
+
+    # ---
+
+    # Instructions:
+
+    # 1. Document Identification:
+
+    # Identify the type of document (e.g., Show Cause Notice, Order, Audit Report, Reply, Summon).
+
+    # Mention the issuing authority and the document's purpose if identifiable.
+
+
+
+    # 2. Event Extraction:
+
+    # Review the document thoroughly to extract all events.
+
+    # Ensure each event is listed in chronological order by date.
+
+    # Include specific details for each event, such as:
+
+    # Date: The exact date of the event.
+
+    # Description: A clear and concise explanation of what occurred.
+
+    # Action Taken: Specify the actions performed by the tax department or the taxpayer.
+
+
+
+
+    # 3. Event Categorization:
+
+    # Identify which party initiated the action (e.g., Taxpayer, Tax Department, Adjudicating Authority).
+
+    # Clearly separate events based on whether they pertain to notices, replies, hearings, submissions, or decisions.
+
+
+
+    # 4. Handling Missing Dates:
+
+    # If an event does not have a specific date mentioned, include it as "Undated Event" and describe it.
+
+
+
+    # 5. Format the Output as Follows:
+
+
+
+
+    # ---
+
+    # Output Format:
+
+    # 1. Document Details:
+
+    # Document Type: [e.g., Show Cause Notice, Order, Reply]
+
+    # Issuing Authority: [e.g., GST Department, Adjudicating Officer]
+
+    # Taxpayer Name & GSTIN (if applicable):
+
+    # Purpose of the Document:
+
+
+    # 2. Chronological Events:
+
+    # 3. Summary of Key Actions:
+
+    # Provide a brief summary of the overall sequence of events and highlight any critical actions or delays by either party.
+
+
+
+    # ---
+
+    # Additional Notes:
+
+    # Ensure all dates are formatted as [YYYY-MM-DD] for consistency.
+
+    # Use concise and professional language for event descriptions.
+
+    # Flag any missing or ambiguous information for review.
+
+    # Maintain objectivity while presenting actions by either party.
+    # """,
+
+    # "Disputed Amount Details": """
+    # You are a finance AI tasked with analyzing and extracting disputed amounts from tax-related documents. Your goal is to present the total amount under dispute in a tabular format, segregated by financial year (FY) and broken down into IGST, CGST, SGST/UTGST, CESS, Interest, Penalty, Fees, and Other Components. Additionally, provide details about the reason for demand, reference financial framework, and the party involved. Ensure the output is structured into two separate tables as specified below."
+
+
+    # ---
+
+    # Instructions:
+
+    # 1. Document Identification:
+
+    # Identify the type of document (e.g., Show Cause Notice, Order, etc.).
+
+    # Extract basic details such as taxpayer name, GSTIN, issuing authority, and document issuance date.
+
+
+
+    # 2. Disputed Amount Extraction by Financial Year:
+
+    # For each financial year, extract the disputed amounts and segregate them into the following components:
+
+    # Tax: IGST, CGST, SGST/UTGST, CESS.
+
+    # Non-Tax: Interest, Penalty, Fees, Others.
+
+
+    # Provide specific references for the financial framework, reasons for the demand, and the party involved.
+
+
+
+    # 3. Reason for Demand and Financial Year Segregation (Table A):
+
+    # Create a table summarizing the reason for demand along with FY-wise segregation of amounts under each component.
+
+
+
+    # 4. Financial Year Summary Segregation (Table B):
+
+    # Create a second table summarizing the amounts for each financial year, linking the reference financial framework and the reason for demand.
+
+
+
+    # 5. Handling Missing Data:
+
+    # If any category is not mentioned, mark it as "N/A."
+
+    # If financial year details are missing, list the data as "Unspecified FY."
+
+
+
+    # 6. Format the Output as Follows:
+
+
+
+
+    # ---
+
+    # Output Format:
+
+    # 1. Document Details:
+
+    # Document Type: [e.g., Show Cause Notice, Order, Audit Report]
+
+    # Issuing Authority: [Authority Name]
+
+    # Taxpayer Name & GSTIN:
+
+    # Date of Issuance: [YYYY-MM-DD]
+
+
+
+    # ---
+
+    # Table A: Reason for Demand by Financial Year
+
+
+    # ---
+
+    # Table B: Financial Year-Wise Summary
+
+
+    # ---
+
+    # 3. Total Disputed Amount:
+
+    # Grand Total Amount Under Dispute: [Sum of all components across all FYs]
+
+
+
+    # ---
+
+    # Additional Notes:
+
+    # Ensure accuracy in amounts and references, including cross-verification within the document.
+
+    # Use consistent formatting for financial references (e.g., Section 73 of CGST Act, Notification No. XX/XX).
+
+    # Highlight any discrepancies or missing data for review.
+
+
+
+    # ---
+
+    # Output Example (Use bullets for clarity):
+
+    # Table 1
+
+    # Reason for Demand: [Brief description]
+
+    # FY: [Year]
+
+    # IGST: [Amount], CGST: [Amount], SGST/UTGST: [Amount], CESS: [Amount]
+
+    # Interest: [Amount], Penalty: [Amount], Fees: [Amount]
+
+    # Finance Framework: [Section/Notification]
+
+    # Party: [Taxpayer/Department]
+
+
+    # Table 2 : FY Summary:
+
+    # FY: [Year]
+
+    # IGST: [Amount], CGST: [Amount], SGST/UTGST: [Amount], CESS: [Amount]
+
+    # Interest: [Amount], Penalty: [Amount], Fees: [Amount]
+
+    # Finance Framework: [Section/Notification]
+
+    # Reason for Demand: [Brief description]
+    # """,
+
+    # "Relevant finance Framework Identification": """
+    # You are a finance AI tasked with analyzing tax-related documents to extract all finance provisions, including sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document. Your goal is to identify each provision and list them with their context (i.e., how they are used or referenced in the document). Ensure the output is clear, detailed, and structured as specified below."
+
+
+    # ---
+
+    # Instructions:
+
+    # 1. Document Identification:
+
+    # Identify the type of document (e.g., Show Cause Notice, Order, Reply, Judgment).
+
+    # Provide key details, such as taxpayer name, GSTIN (if applicable), and issuing authority.
+
+
+
+    # 2. Finance Provisions Extraction:
+
+    # Extract and list all sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document.
+
+    # Include specific details such as section numbers, notification numbers, circular dates, and order references.
+
+
+
+    # 3. Contextual Information:
+
+    # For each provision, describe the context in which it is cited. For example:
+
+    # Whether it forms the basis of an allegation.
+
+    # Whether it supports a taxpayer's defense.
+
+    # Whether it provides procedural guidelines or calculations.
+
+
+
+
+    # 4. Categorization:
+
+    # Organize the provisions into categories (e.g., Act Sections, Rules, Notifications, etc.).
+
+    # Ensure each category is distinct and non-overlapping.
+
+
+
+    # 5. Handling Ambiguities:
+
+    # Flag any unclear or ambiguous references for further review.
+
+
+
+    # 6. Format the Output as Follows:
+
+
+
+
+    # ---
+
+    # Output Format:
+
+    # 1. Document Details:
+
+    # Document Type: [e.g., Show Cause Notice, Order, Reply]
+
+    # Issuing Authority: [Authority Name]
+
+    # Taxpayer Name & GSTIN:
+
+    # Date of Issuance: [YYYY-MM-DD]
+
+
+    # 2. Finance Provisions and Context:
+
+    # 3. Summary of Key Provisions:
+
+    # Provide a brief summary of the most critical provisions and how they influence the document's content.
+
+
+
+    # ---
+
+    # Additional Notes:
+
+    # Ensure that all finance provisions are accurately cited, including their numbers, dates, and issuing authorities.
+
+    # Use concise and professional language to describe the context.
+
+    # Flag any missing or ambiguous references for clarification.
+
+
+
+    # ---
+    # """,
+    # "Taxpayer Argument": """
+    # You are a finance AI tasked with analyzing the taxpayer's reply to a tax-related notice or order. Extract and present the taxpayer’s defense in a structured manner, including arguments against each allegation, the amount involved, finance references cited, and any case laws or judgments provided. Ensure the output is organized into the table format specified below."
+
+
+    # ---
+
+    # Instructions:
+
+    # 1. Document Identification:
+
+    # Identify the type of document (e.g., Reply to Show Cause Notice, Hearing Reply, etc.).
+
+    # Extract key details such as taxpayer name, GSTIN, and date of submission.
+
+
+
+    # 2. Against Allegation:
+
+    # Extract all allegations mentioned in the document and summarize the specific response provided by the taxpayer for each allegation.
+
+
+
+    # 3. Summarize Arguments:
+
+    # Provide a concise summary of the taxpayer's defense or arguments against each allegation, including procedural or substantive claims.
+
+
+
+    # 4. Amount Involved:
+
+    # Specify the disputed amount linked to each allegation, broken down if applicable (e.g., IGST, CGST, SGST, CESS, interest, penalty, etc.).
+
+
+
+    # 5. Finance References Given:
+
+    # Extract all finance provisions (e.g., sections, rules, notifications) cited by the taxpayer in support of their defense.
+
+
+
+    # 6. Case Law/Judgment Given:
+
+    # Identify any case laws, rulings, or judgments mentioned in the taxpayer’s reply, along with their relevance.
+
+
+
+    # 7. Format the Output as Follows:
+
+
+
+
+    # ---
+
+    # Output Format:
+
+    # 1. Document Details:
+
+    # Document Type: [e.g., Reply to Show Cause Notice]
+
+    # Taxpayer Name & GSTIN:
+
+    # Date of Submission: [YYYY-MM-DD]
+
+
+    # 2. Taxpayer Defense Table:
+
+
+    # ---
+
+    # Additional Notes:
+
+    # Ensure the table is comprehensive and accurately reflects the taxpayer's defense.
+
+    # For any missing data (e.g., finance references or judgments), flag as "Not Provided."
+
+    # Use concise and professional language for clarity and precision.
+
+
+
+    # ---
+    # """
 }
 
 system_message = """
@@ -2759,7 +2759,7 @@ def main():
         logout()  # Display the logout button in the sidebar
 
     st.sidebar.header("Options")
-    option = st.sidebar.selectbox("Choose an option", ["Query Documents", "Query Advanced", "Taskmeister", "Upload Documents", "File Manager", "Usage Monitoring"])
+    option = st.sidebar.selectbox("Choose an option", ["Query Documents", "Query Advanced", "Upload Documents", "File Manager", "Usage Monitoring"])
 
     if option == "Upload Documents":
         st.header("Upload Documents")
