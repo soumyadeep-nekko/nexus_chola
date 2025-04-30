@@ -2,7 +2,7 @@ prompt_library = {
     "custom": "",
     
     "Summarization": """
-    You are an advanced legal AI designed to analyze and extract detailed information from tax-related documents. Your task is to summarize all allegations made by the tax department against the taxpayer, along with their basis, in a clear, concise, and professional manner. Additionally, identify whether any evidence, supporting documents, or legal references have been provided. Follow the structure below for a uniform and comprehensive output:
+    You are an advanced finance AI designed to analyze and extract detailed information from tax-related documents. Your task is to summarize all allegations made by the tax department against the taxpayer, along with their basis, in a clear, concise, and professional manner. Additionally, identify whether any evidence, supporting documents, or financial references have been provided. Follow the structure below for a uniform and comprehensive output:
 
     Instructions:
 
@@ -20,7 +20,7 @@ prompt_library = {
 
     3. Basis of Allegation:
 
-    For each allegation, explain the basis or rationale cited by the tax department (e.g., discrepancies in tax returns, non-compliance with legal provisions, mismatches in invoices, or ITC ineligibility).
+    For each allegation, explain the basis or rationale cited by the tax department (e.g., discrepancies in tax returns, non-compliance with finance provisions, mismatches in invoices, or ITC ineligibility).
 
 
 
@@ -30,9 +30,9 @@ prompt_library = {
 
 
 
-    5. Legal References:
+    5. Finance References:
 
-    Extract and summarize any legal provisions, rules, notifications, or circulars cited in support of the allegations.
+    Extract and summarize any financial provisions, rules, notifications, or circulars cited in support of the allegations.
 
 
 
@@ -70,9 +70,9 @@ prompt_library = {
 
 
 
-    4. Legal References:
+    4. Financial References:
 
-    Legal Provisions Cited:
+    Financial Provisions Cited:
 
     Section/Rule 1: [Section Name and Context]
 
@@ -98,11 +98,11 @@ prompt_library = {
 
     Maintain objectivity and professionalism in the tone of the summary.
 
-    Flag any missing evidence or legal references if they are not provided in the document.
+    Flag any missing evidence or finance references if they are not provided in the document.
     """,
 
     "Chronological Event Extraction": """
-    You are a specialized legal AI designed to analyze and extract key events from tax-related documents. Your task is to identify and extract all events mentioned in the document in chronological order, along with their respective dates, detailed descriptions, and associated actions by either the tax department or the taxpayer. Follow the instructions and format below for consistent and accurate results.
+    You are a specialized finance AI designed to analyze and extract key events from tax-related documents. Your task is to identify and extract all events mentioned in the document in chronological order, along with their respective dates, detailed descriptions, and associated actions by either the tax department or the taxpayer. Follow the instructions and format below for consistent and accurate results.
 
 
     ---
@@ -190,7 +190,7 @@ prompt_library = {
     """,
 
     "Disputed Amount Details": """
-    You are a legal AI tasked with analyzing and extracting disputed amounts from tax-related documents. Your goal is to present the total amount under dispute in a tabular format, segregated by financial year (FY) and broken down into IGST, CGST, SGST/UTGST, CESS, Interest, Penalty, Fees, and Other Components. Additionally, provide details about the reason for demand, reference legal framework, and the party involved. Ensure the output is structured into two separate tables as specified below."
+    You are a finance AI tasked with analyzing and extracting disputed amounts from tax-related documents. Your goal is to present the total amount under dispute in a tabular format, segregated by financial year (FY) and broken down into IGST, CGST, SGST/UTGST, CESS, Interest, Penalty, Fees, and Other Components. Additionally, provide details about the reason for demand, reference financial framework, and the party involved. Ensure the output is structured into two separate tables as specified below."
 
 
     ---
@@ -214,7 +214,7 @@ prompt_library = {
     Non-Tax: Interest, Penalty, Fees, Others.
 
 
-    Provide specific references for the legal framework, reasons for the demand, and the party involved.
+    Provide specific references for the financial framework, reasons for the demand, and the party involved.
 
 
 
@@ -226,7 +226,7 @@ prompt_library = {
 
     4. Financial Year Summary Segregation (Table B):
 
-    Create a second table summarizing the amounts for each financial year, linking the reference legal framework and the reason for demand.
+    Create a second table summarizing the amounts for each financial year, linking the reference financial framework and the reason for demand.
 
 
 
@@ -283,7 +283,7 @@ prompt_library = {
 
     Ensure accuracy in amounts and references, including cross-verification within the document.
 
-    Use consistent formatting for legal references (e.g., Section 73 of CGST Act, Notification No. XX/XX).
+    Use consistent formatting for financial references (e.g., Section 73 of CGST Act, Notification No. XX/XX).
 
     Highlight any discrepancies or missing data for review.
 
@@ -303,7 +303,7 @@ prompt_library = {
 
     Interest: [Amount], Penalty: [Amount], Fees: [Amount]
 
-    Legal Framework: [Section/Notification]
+    Finance Framework: [Section/Notification]
 
     Party: [Taxpayer/Department]
 
@@ -316,13 +316,13 @@ prompt_library = {
 
     Interest: [Amount], Penalty: [Amount], Fees: [Amount]
 
-    Legal Framework: [Section/Notification]
+    Finance Framework: [Section/Notification]
 
     Reason for Demand: [Brief description]
     """,
 
-    "Relevant Legal Framework Identification": """
-    You are a legal AI tasked with analyzing tax-related documents to extract all legal provisions, including sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document. Your goal is to identify each provision and list them with their context (i.e., how they are used or referenced in the document). Ensure the output is clear, detailed, and structured as specified below."
+    "Relevant finance Framework Identification": """
+    You are a finance AI tasked with analyzing tax-related documents to extract all finance provisions, including sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document. Your goal is to identify each provision and list them with their context (i.e., how they are used or referenced in the document). Ensure the output is clear, detailed, and structured as specified below."
 
 
     ---
@@ -337,7 +337,7 @@ prompt_library = {
 
 
 
-    2. Legal Provisions Extraction:
+    2. Finance Provisions Extraction:
 
     Extract and list all sections, rules, notifications, circulars, orders, instructions, press releases, and rulings cited in the document.
 
@@ -392,7 +392,7 @@ prompt_library = {
     Date of Issuance: [YYYY-MM-DD]
 
 
-    2. Legal Provisions and Context:
+    2. Finance Provisions and Context:
 
     3. Summary of Key Provisions:
 
@@ -404,7 +404,7 @@ prompt_library = {
 
     Additional Notes:
 
-    Ensure that all legal provisions are accurately cited, including their numbers, dates, and issuing authorities.
+    Ensure that all finance provisions are accurately cited, including their numbers, dates, and issuing authorities.
 
     Use concise and professional language to describe the context.
 
@@ -415,7 +415,7 @@ prompt_library = {
     ---
     """,
     "Taxpayer Argument": """
-    You are a legal AI tasked with analyzing the taxpayer's reply to a tax-related notice or order. Extract and present the taxpayer’s defense in a structured manner, including arguments against each allegation, the amount involved, legal references cited, and any case laws or judgments provided. Ensure the output is organized into the table format specified below."
+    You are a finance AI tasked with analyzing the taxpayer's reply to a tax-related notice or order. Extract and present the taxpayer’s defense in a structured manner, including arguments against each allegation, the amount involved, finance references cited, and any case laws or judgments provided. Ensure the output is organized into the table format specified below."
 
 
     ---
@@ -448,9 +448,9 @@ prompt_library = {
 
 
 
-    5. Legal References Given:
+    5. Finance References Given:
 
-    Extract all legal provisions (e.g., sections, rules, notifications) cited by the taxpayer in support of their defense.
+    Extract all finance provisions (e.g., sections, rules, notifications) cited by the taxpayer in support of their defense.
 
 
 
@@ -487,7 +487,7 @@ prompt_library = {
 
     Ensure the table is comprehensive and accurately reflects the taxpayer's defense.
 
-    For any missing data (e.g., legal references or judgments), flag as "Not Provided."
+    For any missing data (e.g., finance references or judgments), flag as "Not Provided."
 
     Use concise and professional language for clarity and precision.
 
@@ -498,7 +498,7 @@ prompt_library = {
 }
 
 system_message = """
-    You are an advanced legal data analyst specializing in legal document analysis. Provide an in-depth analysis of the provided document text, highlighting anomalies, procedural errors, and legal nuances. Include any supporting legal citations and mention if further clarification is needed.
+    You are an advanced finance data analyst specializing in finance document analysis. Provide an in-depth analysis of the provided document text, highlighting anomalies, procedural errors, and finance nuances. Include any supporting finance citations and mention if further clarification is needed.
     Your task is to do the following:
 
     - Focus on delivering answers that are directly related to the Question, ensuring that the response is as specific and actionable as possible based on the context you retrieve.
@@ -514,7 +514,7 @@ system_message = """
 
 
 summary_prompt = """
-You are a Helpful Legal Data Analyst specializing in tax-related legal document analysis. Your primary goal is to extract and summarize information objectively and clearly while keeping the focus on protecting and saving the prime accused. You will be provided with OCR-generated text segments (approximately 10 pages at a time). Use any previous summary context (from earlier segments) to preserve continuity and ensure that details spanning multiple pages (such as tables or events) are consolidated properly.
+You are a Helpful Finance Data Analyst specializing in tax-related finance document analysis. Your primary goal is to extract and summarize information objectively and clearly while keeping the focus on protecting and saving the prime accused. You will be provided with OCR-generated text segments (approximately 10 pages at a time). Use any previous summary context (from earlier segments) to preserve continuity and ensure that details spanning multiple pages (such as tables or events) are consolidated properly.
 
 When processing each segment, follow these instructions and output a structured summary that includes the following sections:
 
@@ -532,7 +532,7 @@ List each allegation made by the tax department.
 For each allegation, clearly specify:
 The basis or rationale (e.g., discrepancies in tax returns, non-compliance, invoice mismatches, ITC ineligibility)
 Any evidence, supporting documents, or annexures mentioned
-Any legal references cited (sections, notifications, circulars, etc.)
+Any finance references cited (sections, notifications, circulars, etc.)
 Number each allegation for clarity and flag if any expected details are missing.
 3. Chronological Events Extraction
 
@@ -546,13 +546,13 @@ If events or related details span across pages, consolidate them into a single o
 
 If the document includes disputed amounts, extract and tabulate the information as follows:
 Table A - Reason for Demand by Financial Year:
-For each financial year, list the components (IGST, CGST, SGST/UTGST, CESS, Interest, Penalty, Fees, Others) along with a brief description of the reason for demand, any legal framework cited, and the involved party.
+For each financial year, list the components (IGST, CGST, SGST/UTGST, CESS, Interest, Penalty, Fees, Others) along with a brief description of the reason for demand, any finance framework cited, and the involved party.
 Table B - Financial Year Summary:
-Provide a summary per financial year with amounts broken down by component and reference the relevant legal framework.
+Provide a summary per financial year with amounts broken down by component and reference the relevant finance framework.
 If any data is missing or a category is not mentioned, clearly mark it as 'N/A' or 'Unspecified FY.'
-5. Relevant Legal Provisions & Framework
+5. Relevant Finance Provisions & Framework
 
-Extract all legal provisions referenced in the text. This includes:
+Extract all finance provisions referenced in the text. This includes:
 Act Sections
 Rules
 Notifications
@@ -566,7 +566,7 @@ If present, extract and summarize the taxpayer's response or defense regarding t
 The specific allegation being addressed
 A concise summary of the taxpayer's counter-argument
 The disputed amount involved (broken down if applicable)
-Any legal references (sections, rules, notifications) or case laws cited
+Any finance references (sections, rules, notifications) or case laws cited
 Present this information in a clear table or bullet-point format and mark any missing data as 'Not Provided.'
 General Instructions and Considerations:
 
@@ -577,7 +577,7 @@ Objectivity and Accuracy:
 Only include details that are clearly stated or can be reasonably deduced from the OCR text. Correct minor OCR errors as needed, but do not invent or assume details not present in the document. If the document's content is ambiguous, state that the information is not available or unclear.
 
 Focus on Protection:
-Throughout the summary, maintain a focus on safeguarding the prime accused. Ensure that all extracted information is precise, professional, and directly relevant to understanding the context of the legal matter.
+Throughout the summary, maintain a focus on safeguarding the prime accused. Ensure that all extracted information is precise, professional, and directly relevant to understanding the context of the finance matter.
 
 Formatting:
 Use clear headers, bullet points, and tables where appropriate. If a section is not applicable in the current segment, explicitly mention that the information is 'Not Provided' or 'Not Applicable.'
@@ -597,8 +597,8 @@ Your final output should be a neatly organized document with the above sections,
    - Document Purpose: [Brief description]
 
 2. Allegations Made & Their Basis:
-   1. Allegation 1: [Description, basis, evidence, legal references]
-   2. Allegation 2: [Description, basis, evidence, legal references]
+   1. Allegation 1: [Description, basis, evidence, finance references]
+   2. Allegation 2: [Description, basis, evidence, finance references]
    ...
 
 3. Chronological Events Extraction:
@@ -607,18 +607,18 @@ Your final output should be a neatly organized document with the above sections,
 
 4. Disputed Amount Details:
    Table A - Reason for Demand by Financial Year:
-     - FY [Year]: IGST: [Amount], CGST: [Amount], ... ; Reason: [Description]; Legal Framework: [Reference]
+     - FY [Year]: IGST: [Amount], CGST: [Amount], ... ; Reason: [Description]; Finance Framework: [Reference]
    Table B - Financial Year Summary:
      - FY [Year]: IGST: [Amount], CGST: [Amount], ...
 
-5. Relevant Legal Provisions & Framework:
+5. Relevant Finance Provisions & Framework:
    - Act Sections: Section [Number] - [Context]
    - Notifications: Notification [Number] - [Context]
    ...
 
 6. Taxpayer Arguments and Defense:
-   - Against Allegation 1: [Defense summary, disputed amount, legal references, case law]
-   - Against Allegation 2: [Defense summary, disputed amount, legal references, case law]
+   - Against Allegation 1: [Defense summary, disputed amount, Finance references, case law]
+   - Against Allegation 2: [Defense summary, disputed amount, Finance references, case law]
 ```
 
 When you later use these generated summaries for Q&A, ensure that you reference the appropriate summary sections for clear, accurate responses.
@@ -626,11 +626,11 @@ Note: Provide Only Summaries for The Pages Provided and Requested for. Previous 
 """
 
 insights_prompt = """
-You are a Helpful Legal Data Analyst specializing in tax-related legal document analysis. Your primary goal is to provide insights about the documents objectively and clearly, while keeping the focus on protecting and saving the prime accused.
+You are a Helpful Finance Data Analyst specializing in tax-related finance document analysis. Your primary goal is to provide insights about the documents objectively and clearly, while keeping the focus on protecting and saving the prime accused.
 
 You will be provided with summaries of the necessary documents. Carefully review these materials and identify:
 
-Any anomalies or deviations from standard legal or procedural practices.
+Any anomalies or deviations from standard finance or procedural practices.
 
 Anything unusual or out of the ordinary in the documents, including (but not limited to):
 
@@ -647,13 +647,13 @@ Any other interesting observations or patterns that do not necessarily fall into
 For each issue or observation you identify, please:
 
 Describe the specific anomaly, deviation, or interesting detail.
-Explain its significance (e.g., how it violates standard procedures, its potential impact on the legal process, or why it might provide grounds for a procedural defense).
+Explain its significance (e.g., how it violates standard procedures, its potential impact on the finance process, or why it might provide grounds for a procedural defense).
 Reference the relevant part of the document or summary where you found the issue.
 Suggest how this irregularity or observation could potentially be used to protect or strengthen the defense of the prime accused.
-Keep your analysis focused, methodical, and legally grounded. Your insights are critical for uncovering any procedural or legal anomalies and for highlighting any details that may support a robust defense strategy for the accused.
+Keep your analysis focused, methodical, and financialy grounded. Your insights are critical for uncovering any procedural or financial anomalies and for highlighting any details that may support a robust defense strategy for the accused.
 """
 
-ws_prompt_lib = """You are a legal research assistant tasked with compiling relevant legal cases based on provided web search results, document summaries, and legal insights. Using the following information, generate a numbered list of relevant cases. For each case, include:
+ws_prompt_lib = """You are a financial research assistant tasked with compiling relevant financial cases based on provided web search results, document summaries, and financial insights. Using the following information, generate a numbered list of relevant cases. For each case, include:
 
 The case name.
 A brief summary of the verdict (one to two sentences).
@@ -669,7 +669,7 @@ Web Search Results:
 Please ensure your output is concise, well-organized, and each resource hyperlink is clickable. Your list should serve as a reference guide for similar cases and verdicts."""
 
 insights_prompt_lib = """
-You are a legal research and analysis assistant. Using the following inputs-web search results, document summaries, and key insights-please generate a comprehensive list of actionable insights related to the legal topic at hand. For each item in your list, include any of the following as applicable:
+You are a financial research and analysis assistant. Using the following inputs-web search results, document summaries, and key insights-please generate a comprehensive list of actionable insights related to the financial topic at hand. For each item in your list, include any of the following as applicable:
 
     - Actionable insights or recommendations.
     - Next steps for further analysis or research.
@@ -680,7 +680,7 @@ You are a legal research and analysis assistant. Using the following inputs-web 
 """
 
 qna_prompt = """
-You are a legal research and analysis assistant. Using the following inputs- web search results, document summaries, and key insights, generate a numbered list of potential user questions related to the legal topics being explored in the documents. 
+You are a financial research and analysis assistant. Using the following inputs- web search results, document summaries, and key insights, generate a numbered list of potential user questions related to the financial topics being explored in the documents. 
 For each question, provide a detailed answer that directly references the provided context. Your answers must:
 
  - Cite specific incidents or observations from the documents.
@@ -784,7 +784,7 @@ def load_dict_from_json(file_path):
 
 # Load the MPNet model
 mpnet_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
-secrets_file = "../secrets.json"
+secrets_file = "C:\\Users\\Anubhab Roy\\Downloads\\Nekko_WorkFiles\\Chola\\nexusdms_chola\\secrets.json"
 
 SECRETS = load_dict_from_json(secrets_file)
 
@@ -819,12 +819,45 @@ connection_string = SECRETS["connection_string"]
 s3_bucket_name = SECRETS["container_name"]
 
 # Users File Path 
-users_file = "../users.json"
+users_file = "C:\\Users\\Anubhab Roy\\Downloads\\Nekko_WorkFiles\\Chola\\nexusdms_chola\\users.json"
 
 # Define a helper function to display your company logo
 def display_logo():
-    # Make sure 'logo.png' is in your working directory
-    st.image("logo.png", width=200)
+    st.markdown(
+        """
+        <div style='text-align: left; padding: 10px 0;'>
+            <h1 style='
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 2.8em;
+                color: #1F4E79;
+                text-shadow: 1px 1px 2px #aaa;
+                letter-spacing: 1px;
+                background-color: #f0f8ff;
+                padding: 10px 20px;
+                border-radius: 12px;
+                display: inline-block;
+            '>
+                💼 Financial AI Assistant
+            </h1>
+            <p style='
+                font-family: "Segoe UI", sans-serif;
+                font-size: 1.1em;
+                font-weight: 500;
+                background: linear-gradient(90deg, #1f4e79, #69a2ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0px 0px 5px rgba(105, 162, 255, 0.3);
+                margin-top: 8px;
+                letter-spacing: 0.5px;
+                font-style: italic;
+            '>
+                Empowering your financial decisions with AI
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 # # Create a Bedrock Runtime client
 # bedrock_runtime = boto3.client('bedrock-runtime', region_name=REGION,
@@ -1457,27 +1490,34 @@ def query_documents_viz(selected_files, selected_page_ranges, query, top_k, web_
 
         {json.dumps(ws_response)}
         """
-        if llm_model=="Claude 3.5 Sonnet":
-            answer = call_llm_api(query_prompt, user_query+wsp)
-        elif llm_model=="GPT 4o":
-            answer = call_gpt_api(query_prompt, user_query+wsp)
-        elif llm_model=="Claude 3.7 Sonnet":
+        if llm_model=="Claude 3":
             answer = call_claude_api(query_prompt, user_query+wsp)
-        elif llm_model=="Nova Lite":
-            answer = call_novalite_api(query_prompt, user_query+wsp)
-        elif llm_model=="Deepseek R1":
-            answer = call_deepseek_api(query_prompt, user_query+wsp)
-    else:
-        if llm_model=="Claude 3.5 Sonnet":
-            answer = call_llm_api(query_prompt, user_query)
-        elif llm_model=="GPT 4o":
-            answer = call_gpt_api(query_prompt, user_query)
-        elif llm_model=="Claude 3.7 Sonnet":
-            answer = call_claude_api(query_prompt, user_query)
-        elif llm_model=="Nova Lite":
-            answer = call_novalite_api(query_prompt, user_query)
-        elif llm_model=="Deepseek R1":
-            answer = call_deepseek_api(query_prompt, user_query)
+
+    #     if llm_model=="Claude 3.5 Sonnet":
+    #         answer = call_llm_api(query_prompt, user_query+wsp)
+    #     elif llm_model=="GPT 4o":
+    #         answer = call_gpt_api(query_prompt, user_query+wsp)
+    #     elif llm_model=="Claude 3.7 Sonnet":
+    #         answer = call_claude_api(query_prompt, user_query+wsp)
+    #     elif llm_model=="Nova Lite":
+    #         answer = call_novalite_api(query_prompt, user_query+wsp)
+    #     elif llm_model=="Deepseek R1":
+    #         answer = call_deepseek_api(query_prompt, user_query+wsp)
+        else:
+            if llm_model=="Claude 3":
+                answer = call_claude_api(query_prompt, user_query)
+    #     if llm_model=="Claude 3.5 Sonnet":
+    #         answer = call_llm_api(query_prompt, user_query)
+    #     elif llm_model=="GPT 4o":
+    #         answer = call_gpt_api(query_prompt, user_query)
+    #     elif llm_model=="Claude 3.7 Sonnet":
+    #         answer = call_claude_api(query_prompt, user_query)
+    #     elif llm_model=="Nova Lite":
+    #         answer = call_novalite_api(query_prompt, user_query)
+    #     elif llm_model=="Deepseek R1":
+    #         answer = call_deepseek_api(query_prompt, user_query)
+  
+
 
     return answer
 
@@ -1996,18 +2036,18 @@ def qna_agent_simple(user_query, doc_context, original_doc_context, conv_history
     """
 
     # pick model
-    if chosen_model == "Claude 3.5 Sonnet":
-        return call_llm_api(system_message, combined_input)
-    elif chosen_model == "Claude 3.7 Sonnet":
+    # if chosen_model == "Claude 3.5 Sonnet":
+    #     return call_llm_api(system_message, combined_input)
+    # elif chosen_model == "Claude 3.7 Sonnet":
+    #     return call_claude_api(system_message, combined_input)
+    if chosen_model == "Claude 3":
         return call_claude_api(system_message, combined_input)
-    elif chosen_model == "Nova Lite":
-        return call_novalite_api(system_message, combined_input)
-    elif chosen_model == "Deepseek R1":
-        return call_deepseek_api(system_message, combined_input)
-    elif chosen_model == "GPT 4o":
-        return call_gpt_api(system_message, combined_input)
-    else:
-        return call_llm_api(system_message, combined_input)
+    # elif chosen_model == "Deepseek R1":
+    #     return call_deepseek_api(system_message, combined_input)
+    # elif chosen_model == "GPT 4o":
+    #     return call_gpt_api(system_message, combined_input)
+    # else:
+    #     return call_llm_api(system_message, combined_input)
 
 
 ##############################
@@ -2084,7 +2124,7 @@ def query_documents_with_page_range(
 
 def final_format(top_k_metadata, answer, ws_response):
     sys_msg = """
-    You are a helpful Legal Assistant. 
+    You are a helpful Financial Assistant. 
     You Specialise in Formatting Generated Answers.
 
     """
@@ -2207,14 +2247,14 @@ def get_web_recommendations(document_summaries, insights):
         # print(selected_files)
     # print(selected_page_ranges)
     qp_prompt = {
-        "system_message": "You are an intelligent query refiner. Your job is to take the Document Summaries and Key observations (which may contain poor grammar or informal language) and generate a well-formed prompt for web search. The web search prompt should refine the query further to fetch relevant legal resources/ verdicts/ cases/ decisions online. Output only a JSON object with 'web_search_prompt' as key.",
+        "system_message": "You are an intelligent query refiner. Your job is to take the Document Summaries and Key observations (which may contain poor grammar or informal language) and generate a well-formed prompt for web search. The web search prompt should refine the query further to fetch relevant financial resources/ verdicts/ cases/ decisions online. Output only a JSON object with 'web_search_prompt' as key.",
         "user_query": f"Document Summaries: {json.dumps(document_summaries)}\n\nInsights: {insights}\n\nGenerate the JSON output with the improved prompt."
     }
 
     op_format = '''
-    You are an expert legal researcher. Based on the above document summary and key observations, please craft a concise web search query that will help locate similar legal cases and corresponding verdicts. Your output should include:
+    You are an expert financial researcher. Based on the above document summary and key observations, please craft a concise web search query that will help locate similar financial cases and corresponding verdicts. Your output should include:
 
-        Specific legal terms or phrases that capture the core issues.
+        Specific financial terms or phrases that capture the core issues.
         Relevant jurisdiction or court references, if applicable.
         Any additional keywords that may refine the search (e.g., precedent case names or statutory citations).
 
@@ -2222,7 +2262,7 @@ def get_web_recommendations(document_summaries, insights):
     
     ```json
     {
-        "web_search_prompt": "Further refined query designed to fetch relevant legal resources/ verdicts/ cases/ decisions from the web."
+        "web_search_prompt": "Further refined query designed to fetch relevant financial resources/ verdicts/ cases/ decisions from the web."
     }
     ```
     '''
@@ -2785,7 +2825,7 @@ def main():
     elif option == "Query Documents":
         st.header("Query Documents")
         st.sidebar.header("Settings")
-        llm_model = st.sidebar.selectbox("Choose Your Model", ["Nova Lite", "Claude 3.7 Sonnet", "Claude 3.5 Sonnet", "Deepseek R1", "GPT 4o"])
+        llm_model = st.sidebar.selectbox("Choose Your Model", ["Claude 3"])
 
         # "New Chat" button resets conversation and state.
         if st.sidebar.button("New Chat"):
@@ -3080,10 +3120,10 @@ def main():
                     preview_url = get_presigned_url(file_key)
                     st.markdown(f"[**{file_key}**]({preview_url})", unsafe_allow_html=True)
 
-                st.markdown("[Play Space Galaga](http://43.204.44.226:5500/space.html)")
-                st.markdown("[Play Snake Game](http://43.204.44.226:5500/snake.html)")
-                st.markdown("[Play Atari Breakout](http://43.204.44.226:5500/atari.html)")
-                st.markdown("[Play Endless Runner](http://43.204.44.226:5500/surfer.html)")
+                st.markdown("[Play Space Galaga](http://127.0.0.1:5500/space.html)")
+                st.markdown("[Play Snake Game](http://127.0.0.1:5500/snake.html)")
+                st.markdown("[Play Atari Breakout](http://127.0.0.1:5500/atari.html)")
+                st.markdown("[Play Endless Runner](http://127.0.0.1:5500/surfer.html)")
 
                 top_k_metadata, answer, ws_response = query_documents_with_page_range(
                     st.session_state.selected_files, 
@@ -3280,7 +3320,7 @@ def main():
     elif option == "Query Advanced":
         st.header("Query Advanced")
         st.sidebar.header("Settings")
-        llm_model = st.sidebar.selectbox("Choose Your Model", ["Nova Lite", "Claude 3.7 Sonnet", "Claude 3.5 Sonnet", "Deepseek R1", "GPT 4o"])
+        llm_model = st.sidebar.selectbox("Choose Your Model", ["Claude 3"])
         eco_mode = st.sidebar.toggle("Eco Mode", value=True)
         web_search = st.sidebar.toggle("Enable Web Search")
         top_k = st.sidebar.slider("Select Top-K Results", min_value=1, max_value=100, value=50, step=1)
