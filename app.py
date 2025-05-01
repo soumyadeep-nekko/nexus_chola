@@ -784,7 +784,7 @@ def load_dict_from_json(file_path):
 
 # Load the MPNet model
 mpnet_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
-secrets_file = "C:\\Users\\Anubhab Roy\\Downloads\\Nekko_WorkFiles\\Chola\\nexusdms_chola\\secrets.json"
+secrets_file = "../secrets.json"
 
 SECRETS = load_dict_from_json(secrets_file)
 
@@ -819,7 +819,7 @@ connection_string = SECRETS["connection_string"]
 s3_bucket_name = SECRETS["container_name"]
 
 # Users File Path 
-users_file = "C:\\Users\\Anubhab Roy\\Downloads\\Nekko_WorkFiles\\Chola\\nexusdms_chola\\users.json"
+users_file = "../users.json"
 
 # Define a helper function to display your company logo
 def display_logo():
@@ -1466,8 +1466,7 @@ def query_documents_viz(selected_files, selected_page_ranges, query, top_k, web_
 
     user_query = f"The User Question was: {query} \n\n"
 
-    
-    ws_response = ""
+    answer = ""
 
     if web_search:
         ws_query = query
@@ -1483,39 +1482,42 @@ def query_documents_viz(selected_files, selected_page_ranges, query, top_k, web_
             include_raw_content=True
         )
 
-        print(ws_response)
-
         wsp = f"""
         # Feel free to use the Web Search Results for Additional Context as well:
 
         {json.dumps(ws_response)}
         """
-        if llm_model=="Claude 3":
-            answer = call_claude_api(query_prompt, user_query+wsp)
 
-    #     if llm_model=="Claude 3.5 Sonnet":
-    #         answer = call_llm_api(query_prompt, user_query+wsp)
-    #     elif llm_model=="GPT 4o":
-    #         answer = call_gpt_api(query_prompt, user_query+wsp)
-    #     elif llm_model=="Claude 3.7 Sonnet":
-    #         answer = call_claude_api(query_prompt, user_query+wsp)
-    #     elif llm_model=="Nova Lite":
-    #         answer = call_novalite_api(query_prompt, user_query+wsp)
-    #     elif llm_model=="Deepseek R1":
-    #         answer = call_deepseek_api(query_prompt, user_query+wsp)
+        if llm_model == "Claude 3":
+            answer = call_claude_api(query_prompt, user_query + wsp)
+        # Add other LLMs here as needed
+        elif llm_model == "GPT 4o":
+            answer = call_gpt_api(query_prompt, user_query + wsp)
+        elif llm_model == "Claude 3.5 Sonnet":
+            answer = call_llm_api(query_prompt, user_query + wsp)
+        elif llm_model == "Claude 3.7 Sonnet":
+            answer = call_claude_api(query_prompt, user_query + wsp)
+        elif llm_model == "Nova Lite":
+            answer = call_novalite_api(query_prompt, user_query + wsp)
+        elif llm_model == "Deepseek R1":
+            answer = call_deepseek_api(query_prompt, user_query + wsp)
         else:
-            if llm_model=="Claude 3":
-                answer = call_claude_api(query_prompt, user_query)
-    #     if llm_model=="Claude 3.5 Sonnet":
-    #         answer = call_llm_api(query_prompt, user_query)
-    #     elif llm_model=="GPT 4o":
-    #         answer = call_gpt_api(query_prompt, user_query)
-    #     elif llm_model=="Claude 3.7 Sonnet":
-    #         answer = call_claude_api(query_prompt, user_query)
-    #     elif llm_model=="Nova Lite":
-    #         answer = call_novalite_api(query_prompt, user_query)
-    #     elif llm_model=="Deepseek R1":
-    #         answer = call_deepseek_api(query_prompt, user_query)
+            answer = "Selected LLM model is not supported."
+    else:
+        if llm_model == "Claude 3":
+            answer = call_claude_api(query_prompt, user_query)
+        elif llm_model == "GPT 4o":
+            answer = call_gpt_api(query_prompt, user_query)
+        elif llm_model == "Claude 3.5 Sonnet":
+            answer = call_llm_api(query_prompt, user_query)
+        elif llm_model == "Claude 3.7 Sonnet":
+            answer = call_claude_api(query_prompt, user_query)
+        elif llm_model == "Nova Lite":
+            answer = call_novalite_api(query_prompt, user_query)
+        elif llm_model == "Deepseek R1":
+            answer = call_deepseek_api(query_prompt, user_query)
+        else:
+            answer = "Selected LLM model is not supported."
   
 
 
@@ -3114,16 +3116,16 @@ def main():
             last_messages = st.session_state.messages[-5:] if len(st.session_state.messages) >= 5 else st.session_state.messages
 
             with st.spinner("Searching documents..."):
-                st.markdown("**While you wait, Feel free to Refer to the Original Documents or Play a Relaxing Game**")
+                # st.markdown("**While you wait, Feel free to Refer to the Original Documents or Play a Relaxing Game**")
 
-                for file_key in st.session_state.selected_files:
-                    preview_url = get_presigned_url(file_key)
-                    st.markdown(f"[**{file_key}**]({preview_url})", unsafe_allow_html=True)
+                # for file_key in st.session_state.selected_files:
+                #     preview_url = get_presigned_url(file_key)
+                #     st.markdown(f"[**{file_key}**]({preview_url})", unsafe_allow_html=True)
 
-                st.markdown("[Play Space Galaga](http://127.0.0.1:5500/space.html)")
-                st.markdown("[Play Snake Game](http://127.0.0.1:5500/snake.html)")
-                st.markdown("[Play Atari Breakout](http://127.0.0.1:5500/atari.html)")
-                st.markdown("[Play Endless Runner](http://127.0.0.1:5500/surfer.html)")
+                # st.markdown("[Play Space Galaga](http://127.0.0.1:5500/space.html)")
+                # st.markdown("[Play Snake Game](http://127.0.0.1:5500/snake.html)")
+                # st.markdown("[Play Atari Breakout](http://127.0.0.1:5500/atari.html)")
+                # st.markdown("[Play Endless Runner](http://127.0.0.1:5500/surfer.html)")
 
                 top_k_metadata, answer, ws_response = query_documents_with_page_range(
                     st.session_state.selected_files, 
